@@ -23,6 +23,10 @@ import {
   jobit,
   tripguide,
   threejs,
+  github,
+  twitter,
+  instagram,
+  linkedin,
 } from "../assets";
 
 export const navLinks = [
@@ -262,4 +266,27 @@ const projects = [
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+const socials = [
+  {
+    name: 'twitter',
+    icon: twitter,
+    url: 'https://twitter.com/',
+  },
+  {
+    name: 'linkedin',
+    icon: linkedin,
+    url: 'https://www.linkedin.com/',
+  },
+  {
+    name: 'instagram',
+    icon: instagram,
+    url: 'https://www.instagram.com/',
+  },
+  {
+    name: 'github',
+    icon: github,
+    url: 'https://github.com/TheRebelPath',
+  },
+];
+
+export { services, technologies, experiences, testimonials, projects, socials };
