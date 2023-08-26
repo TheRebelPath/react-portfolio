@@ -10,7 +10,7 @@ const Footer = () => (
     whileInView="show"
     className='mt-[-90px]'
   >
-    <div className="lg:w-[80%] w-[100%] mx-auto flex flex-col">
+    <div className="lg:w-[100%] w-[95%] mx-auto flex flex-col">
 
       <div className="flex flex-col">
         <div className="mb-[30px] h-[2px] bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 opacity-40" />
