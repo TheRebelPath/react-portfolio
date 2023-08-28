@@ -17,13 +17,13 @@ const ServiceCard = ({index, title, icon}) => {
     tiltEasing="ease-in-out"
     scale={1.07}
     glareEnable={true}
-    glareMaxOpacity={0.25}
+    glareMaxOpacity={0.55}
     glareColor="purple"
     glarePosition="all"
     glareBorderRadius="20px"
     >
       <motion.div
-      variants={fadeIn('right', 'spring', 0.5 *index, 0.75)}
+      variants={fadeIn('right', 'spring', 0.5 * index, 0.75)}
       className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card">
         <div 
          className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col"
@@ -48,10 +48,9 @@ const About = () => {
       <motion.p 
       variants={fadeIn("", "", 0.1, 1)}
       className="mt-4 text-secondary  text-[17px] max-w-3xl leading-[30px]">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum fuga
-        quasi, eligendi veniam cupiditate, nemo excepturi aliquid perspiciatis
-        sapiente illum vel blanditiis suscipit neque doloribus soluta, vero
-        omnis ullam inventore!
+        Hi there, I'm Rodrigo, a self-taught front end web developer from Mexico. 
+        I have a passion for all things technology and design, and I love creating beautiful and functional websites. 
+        I'm always eager to learn new skills and tools, and I'm looking for job opportunities where I can contribute, learn and grow as a developer.
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10">

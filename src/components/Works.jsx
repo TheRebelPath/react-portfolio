@@ -7,7 +7,7 @@ import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 
-const ProjectCard = ({index, name, description, tags, image, source_code_link}) => {
+const ProjectCard = ({index, name, description, tags, image, source_code_link, live_link,}) => {
   return (
     <motion.div
     variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
@@ -19,7 +19,7 @@ const ProjectCard = ({index, name, description, tags, image, source_code_link}) 
         tiltEasing="ease-in-out"
         scale={1.04}
         glareEnable={true}
-        glareMaxOpacity={0.15}
+        glareMaxOpacity={0.25}
         glareColor="blue"
         glarePosition="all"
         glareBorderRadius="20px"
@@ -28,20 +28,22 @@ const ProjectCard = ({index, name, description, tags, image, source_code_link}) 
          <img 
          src={image} 
          alt={name}
-         className="w-full h-full object-cover rounded-2xl" />
-         <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
+         className="w-full h-full object-cover rounded-2xl cursor-pointer" 
+         onClick={() => window.open(live_link, "_blank")}
+         />
+       </div>
+
+       <div className="relative mt-5">
+         <div className="absolute top-[-25px] right-[-10px] flex justify-end m-3 card-img_hover">
           <div
           onClick={() => window.open(source_code_link, '_blank')} 
           className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer">
             <img 
             src={github} 
-            alt="github"
+            alt="source code"
             className="w-2/3 h-2/3 object-contain" />
           </div>
          </div>
-       </div>
-
-       <div className="mt-5">
         <h3 className="text-white font-bold text-[24px]">{name}</h3>
         <p className="mt-2 text-secondary text-[14px]">{description}</p>
        </div>
@@ -70,13 +72,9 @@ const Works = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita cum
-          laboriosam aliquid esse voluptate numquam accusamus hic velit
-          laudantium unde alias obcaecati sunt ipsam impedit quas voluptates
-          iste, magni maxime. Deleniti quam ex assumenda cumque quae aspernatur,
-          voluptates quidem, adipisci architecto quo laudantium hic! A quae,
-          repellendus debitis vero deserunt modi illo id cumque eveniet,
-          praesentium quaerat ipsa. Numquam, sit.
+          Here are some of the projects I’ve worked on that showcase my skills and experience. 
+          For each project, I’ve provided brief descriptions and links to code repositories and live demos. 
+          This illustrates my ability to work with different technologies and solve problems.
         </motion.p>
       </div>
       <div className="mt-20 flex flex-wrap gap-7">
@@ -91,4 +89,4 @@ const Works = () => {
   );
 };
 
-export default SectionWrapper(Works, "");
+export default SectionWrapper(Works, "works");

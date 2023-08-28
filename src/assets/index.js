@@ -29,9 +29,12 @@ import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
 
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
+import metavs from "./projects/metavs.png";
+import threets from "./projects/threets.png";
+import hobank from "./projects/hobank.png";
+import movies from "./projects/movies.png";
+import cheeseq from "./projects/cheeseq.png";
+import ytclone from "./projects/ytclone.png";
 
 export {
   logo,
@@ -62,7 +65,10 @@ export {
   shopify,
   starbucks,
   tesla,
-  carrent,
-  jobit,
-  tripguide,
+  metavs,
+  threets,
+  hobank,
+  movies,
+  cheeseq,
+  ytclone,
 };
