@@ -6,7 +6,7 @@ import * as THREE from "three";
 import CanvasLoader from "../Loader";
 
 const Robot = () => {
-  const robot = useGLTF("./robot/scene.gltf");
+  const robot = useGLTF("./robot/robot.glb");
   const mixer = useRef();
   mixer.current = new THREE.AnimationMixer(robot.scene);
 
