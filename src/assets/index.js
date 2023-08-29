@@ -29,12 +29,12 @@ import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
 
-import metavs from "./projects/metavs.png";
-import threets from "./projects/threets.png";
-import hobank from "./projects/hobank.png";
-import movies from "./projects/movies.png";
-import cheeseq from "./projects/cheeseq.png";
-import ytclone from "./projects/ytclone.png";
+import metavs from "./projects/metavs.webp";
+import threets from "./projects/threets.webp";
+import hobank from "./projects/hobank.webp";
+import movies from "./projects/movies.webp";
+import cheeseq from "./projects/cheeseq.webp";
+import ytclone from "./projects/ytclone.webp";
 
 export {
   logo,

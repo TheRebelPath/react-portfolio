@@ -203,7 +203,7 @@ const testimonials = [
     name: "Elon Musk",
     designation: "CEO",
     company: "SpaceX",
-    image: "https://upload.wikimedia.org/wikipedia/commons/9/99/Elon_Musk_Colorado_2022_%28cropped2%29.jpg",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Elon_Musk_Colorado_2022_%28cropped2%29.jpg/196px-Elon_Musk_Colorado_2022_%28cropped2%29.jpg",
   },
 ];
 
