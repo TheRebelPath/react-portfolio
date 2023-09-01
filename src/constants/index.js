@@ -343,7 +343,7 @@ const socials = [
   {
     name: 'linkedin',
     icon: linkedin,
-    url: 'www.linkedin.com/in/rodrigo-yáñez-64a07428b',
+    url: 'https://www.linkedin.com/in/rodrigo-yáñez-64a07428b',
   },
   {
     name: 'instagram',
