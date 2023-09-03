@@ -6,8 +6,6 @@ import { SectionWrapper } from "../hoc";
 const Footer = () => (
   <motion.footer
     variants={footerVariants}
-    initial="hidden"
-    whileInView="show"
     className='mt-[-90px]'
   >
     <div className="lg:w-[100%] w-[95%] mx-auto flex flex-col">

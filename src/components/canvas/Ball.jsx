@@ -37,7 +37,7 @@ const Ball = (props) => {
 
 const BallCanvas = ({ icon }) => {
   return (
-    <Canvas frameloop="always" gl={{ preserveDrawingBuffer: true }}>
+    <Canvas frameloop="always" gl={{ preserveDrawingBuffer: false }}>
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
           enableZoom={false}

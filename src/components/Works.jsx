@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 
 import { styles } from "../styles";
 import { github } from "../assets";
-import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
-import { fadeIn, textVariant } from "../utils/motion";
+import { fadeIn, textVariant, staggerContainer } from "../utils/motion";
+import { useState} from 'react';
 
 const ProjectCard = ({index, name, description, tags, image, source_code_link, live_link,}) => {
   return (
@@ -45,7 +45,7 @@ const ProjectCard = ({index, name, description, tags, image, source_code_link, l
             className="w-2/3 h-2/3 object-contain" />
           </div>
          </div>
-        <h3 className="text-white font-bold text-[24px]">{name}</h3>
+        <h3 className="text-white font-bold text-[24px] max-[420px]:text-[20px]">{name}</h3>
         <p className="mt-2 text-secondary text-[14px]">{description}</p>
        </div>
 
@@ -62,8 +62,26 @@ const ProjectCard = ({index, name, description, tags, image, source_code_link, l
 }
 
 const Works = () => {
+  const [visibleProjects, setVisibleProjects] = useState(3);
+  const [show, setShow] = useState('hidden');
+
+  const loadMore = () => {
+    setShow('false')
+    setVisibleProjects(visibleProjects + 3);
+  };
+  
   return (
     <>
+    <motion.section
+        variants={staggerContainer()}
+        initial={show}
+        whileInView="show"
+        viewport={{ once: true, amount: 0.25 }}
+        className={`${styles.padding} max-w-7xl mx-auto relative z-0`}
+      >
+      <span className="hash-span" id="works">
+          &nbsp;
+      </span>
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>My work</p>
         <h2 className={styles.sectionHeadText}>Projects.</h2>
@@ -79,15 +97,27 @@ const Works = () => {
         </motion.p>
       </div>
       <div className="mt-20 flex flex-wrap gap-7">
-        {projects.map((project, index) => (
-          <ProjectCard 
-          key={`project-${index}`}
-          {...project}
-          index={index}/>
+        {projects.slice(0, visibleProjects).map((project, index) => (
+          <ProjectCard
+            key={`project-${index}`}
+            {...project}
+            index={index}
+          />
         ))}
       </div>
+       <div className="w-full flex justify-center">
+      {visibleProjects < projects.length && (
+        <button onClick={loadMore} className="w-[25%] max-[420px]:w-full mt-5 bg-tertiary py-3 px-8 outline-none  text-white font-bold shadow-md shadow-primary rounded-xl hover:bg-primary transform active:translate-y-0.5"
+        >
+          Load More
+        </button>
+      )}
+
+       </div>
+      </motion.section>
     </>
   );
 };
 
-export default SectionWrapper(Works, "works");
+export default Works;
+

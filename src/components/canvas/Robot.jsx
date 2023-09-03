@@ -37,7 +37,7 @@ const RobotCanvas = () => {
       shadows
       frameloop="always"
       dpr={[1, 2]}
-      gl={{ preserveDrawingBuffer: true }}
+      gl={{ preserveDrawingBuffer: false }}
       camera={{
         fov: 45,
         near: 0.1,
@@ -54,7 +54,6 @@ const RobotCanvas = () => {
         castShadow
         shadow-mapSize={1024}
       />
-      <pointLight intensity={0.5} />
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
           enableZoom={false}
