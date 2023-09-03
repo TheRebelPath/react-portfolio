@@ -1,4 +1,4 @@
-import { Suspense, useEffect, useState, memo } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
@@ -49,8 +49,8 @@ const ComputersCanvas = () => {
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
-        <Computers isMobile={isMobile}/>
-        {/* <Computers /> */}
+        {/* <Computers isMobile={isMobile}/> */}
+        <Computers />
       </Suspense>
 
       <Preload all />
@@ -58,4 +58,4 @@ const ComputersCanvas = () => {
   );
 };
 
-export default memo(ComputersCanvas);
+export default ComputersCanvas;
