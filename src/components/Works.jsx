@@ -83,7 +83,6 @@ const Works = () => {
           &nbsp;
       </span>
       <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>My work</p>
         <h2 className={styles.sectionHeadText}>Projects.</h2>
       </motion.div>
       <div className="w-full flex">
@@ -93,10 +92,9 @@ const Works = () => {
         >
           Here are some of the projects I’ve worked on that showcase my skills and experience. 
           For each project, I’ve provided brief descriptions and links to code repositories and live demos. 
-          This illustrates my ability to work with different technologies and solve problems.
         </motion.p>
       </div>
-      <div className="mt-20 flex flex-wrap gap-7">
+      <div className="mt-10 flex flex-wrap gap-7">
         {projects.slice(0, visibleProjects).map((project, index) => (
           <ProjectCard
             key={`project-${index}`}
