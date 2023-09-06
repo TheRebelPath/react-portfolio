@@ -1,38 +1,31 @@
 import { BrowserRouter } from "react-router-dom";
-import { useMobile } from "./utils/useMobile";
 
 import {
   About,
   Contact,
   Experience,
-  Feedbacks,
   Hero,
   Navbar,
-  Tech,
   Works,
-  StarsCanvas,
+  MatrixBackground,
   Footer
 } from "./components";
 
 const App = () => {
 
-  const isMobile = useMobile()
-
   return (
     <BrowserRouter>
       <div className="relative z-0 bg-primary">
-        <div className={`${isMobile? "bg-hero-pattern-mobile" : "bg-hero-pattern" } bg-cover bg-no-repeat bg-center`}>
+        <div className="relative">
           <Navbar />
+          <MatrixBackground/>
           <Hero />
         </div>
         <About />
         <Experience />
-        {isMobile? false :  <Tech />}
         <Works />
-        <Feedbacks />
         <div className="relative z-0">
           <Contact />
-          <StarsCanvas />
           <Footer/>
         </div>
       </div>

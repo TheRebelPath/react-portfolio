@@ -4,21 +4,11 @@ import {
   creator,
   web,
   javascript,
-  typescript,
   html,
   css,
   reactjs,
-  redux,
   tailwind,
-  nodejs,
-  mongodb,
   git,
-  figma,
-  docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
   metavs,
   threets,
   hobank,
@@ -61,7 +51,7 @@ const services = [
     icon: mobile,
   },
   {
-    title: "Tech Enthusiast",
+    title: "Problem Solver",
     icon: backend,
   },
   {
@@ -83,30 +73,14 @@ const technologies = [
     name: "JavaScript",
     icon: javascript,
   },
-  // {
-  //   name: "TypeScript",
-  //   icon: typescript,
-  // },
   {
     name: "React JS",
     icon: reactjs,
   },
-  // {
-  //   name: "Redux Toolkit",
-  //   icon: redux,
-  // },
   {
     name: "Tailwind CSS",
     icon: tailwind,
   },
-  // {
-  //   name: "Node JS",
-  //   icon: nodejs,
-  // },
-  // {
-  //   name: "MongoDB",
-  //   icon: mongodb,
-  // },
   {
     name: "Three JS",
     icon: threejs,
@@ -114,96 +88,6 @@ const technologies = [
   {
     name: "git",
     icon: git,
-  },
-  // {
-  //   name: "figma",
-  //   icon: figma,
-  // },
-  // {
-  //   name: "docker",
-  //   icon: docker,
-  // },
-];
-
-const experiences = [
-  {
-    title: "The Essentials for Web Development",
-    company_name: "HTML and CSS",
-    icon: starbucks,
-    iconBg: "#383E56",
-    date: "March 2020 - April 2021",
-    points: [
-      "Acquired the skills to create and structure web pages using HTML elements and attributes.",
-      "Gained an understanding of applying styles and layouts to web pages using CSS selectors, properties, and values.",
-      "Explored responsive design techniques to ensure web pages adapt to different screen sizes and devices.",
-      "Utilized web development tools such as code editors, browsers, validators, and debuggers to write, test, and debug code.",
-    ],
-  },
-  {
-    title: "Fundamentals for Web Programming",
-    company_name: "JavaScript",
-    icon: tesla,
-    iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
-    points: [
-      "Variables and data types: how to declare, assign, and manipulate different types of data, such as numbers, strings, booleans, arrays, and objects.",
-      "Functions: how to define, invoke, and return values from reusable blocks of code that perform a specific task.",
-      "Events and DOM manipulation: how to handle user interactions (such as clicks, mouse movements, keyboard inputs) and manipulate the elements of a web page using the Document Object Model (DOM).",
-      "ECMAScript 6 features: how to use new features of JavaScript such as let and const keywords, template literals, destructuring, default parameters, rest and spread operators, and modules.",
-    ],
-  },
-  {
-    title: "Building Dynamic Web Apps",
-    company_name: "React",
-    icon: shopify,
-    iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
-    points: [
-      "Learned to manage the state of the components using hooks such as useState and useEffect.",
-      "Explored effective approaches to managing user interactions and events via event handlers and custom hooks.",
-      "Gained skills in fetching and displaying data from external APIs",
-      "Deployed React apps using platforms like github.",
-    ],
-  },
-  {
-    title: "Web Dev Tools and Utilities",
-    company_name: "Tailwind, Git, Three.js and More",
-    icon: meta,
-    iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
-    points: [
-      "Git: how to manage my code with version control, using features such as branches, commits, and merges.",
-      "Tailwind: how to style my web pages with Tailwind, using features such as utility classes, customization, and composition.",
-      "Three.js: how to create and animate 3D graphics in the browser with Three.js, using features such as scenes, cameras, and lights.",
-      "Chat GPT: how to use chat gpt to generate solutions for my coding problems, using features such as prompts, parameters, and suggestions.",
-    ],
-  },
-];
-
-const testimonials = [
-  {
-    testimonial:
-      "So, I collaborate with Rodrigo – turns out he's alright at web stuff. Guess we'll keep coding together.",
-    name: "Diego Garea",
-    designation: "CTO",
-    company: "Edicion Especial",
-    image: "https://diegogg-dev.com/assets/logo-14f2ee35.svg",
-  },
-  {
-    testimonial:
-      "Whoof! Rodrigo turbocharged our site, just like I zoom around the yard. Tail-waggingly impressed!",
-    name: "Fenrir",
-    designation: "Dog",
-    company: "Rodrigo",
-    image: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Malinois_Shepherd3.JPG",
-  },
-  {
-    testimonial:
-      "Discovered Rodrigo's work – solid skills! Web development frontier seems to have a capable explorer.",
-    name: "Elon Musk",
-    designation: "CEO",
-    company: "SpaceX",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Elon_Musk_Colorado_2022_%28cropped2%29.jpg/196px-Elon_Musk_Colorado_2022_%28cropped2%29.jpg",
   },
 ];
 
@@ -357,4 +241,4 @@ const socials = [
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects, socials };
+export { services, technologies, projects, socials };
