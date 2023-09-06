@@ -1,6 +1,6 @@
 import RobotCanvas from "./Robot";
 import BallCanvas from "./Ball";
-import ComputersCanvas from "./Computers";
 import MatrixBackground from "./Matrix";
+import HoloBook from "./Book";
 
-export { RobotCanvas, BallCanvas, ComputersCanvas, MatrixBackground };
+export { RobotCanvas, BallCanvas, MatrixBackground, HoloBook };

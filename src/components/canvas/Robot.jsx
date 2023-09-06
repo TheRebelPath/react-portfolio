@@ -1,12 +1,14 @@
 import React, { Suspense, useEffect, useRef, memo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
+import { OrbitControls, Preload, useGLTF} from "@react-three/drei";
 import * as THREE from "three";
 
 import CanvasLoader from "../Loader";
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 
 const Robot = () => {
-  const robot = useGLTF("./robot/robot.glb");
+  
+  const robot = useGLTF("./robot/robot.glb", new DRACOLoader());
   const mixer = useRef();
   mixer.current = new THREE.AnimationMixer(robot.scene);
 
@@ -24,9 +26,8 @@ const Robot = () => {
   return (
     <primitive
       object={robot.scene}
-      scale={1.2}
-      position-y={-1}
-      rotation-y={0}
+      scale={1.5}
+      position-y={-1.7}
     />
   );
 };
@@ -34,25 +35,15 @@ const Robot = () => {
 const RobotCanvas = () => {
   return (
     <Canvas
-      shadows
-      frameloop="always"
       dpr={[1, 2]}
       gl={{ preserveDrawingBuffer: false }}
       camera={{
-        fov: 45,
-        near: 0.1,
-        far: 200,
-        position: [0, 3, 6],
       }}
     >
       <hemisphereLight intensity={0.15} groundColor="black" />
       <spotLight
         position={[-20, 50, 10]}
         angle={0.12}
-        penumbra={1}
-        intensity={1}
-        castShadow
-        shadow-mapSize={1024}
       />
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls

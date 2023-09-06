@@ -1,4 +1,4 @@
-import { RobotCanvas, BallCanvas, ComputersCanvas, MatrixBackground } from './canvas';
+import { RobotCanvas, BallCanvas, MatrixBackground, HoloBook } from './canvas';
 import Hero from './Hero';
 import Navbar from './Navbar';
 import About from './About';
@@ -17,8 +17,8 @@ export {
   Works,
   Contact,
   RobotCanvas, 
+  HoloBook,
   BallCanvas, 
-  ComputersCanvas, 
   MatrixBackground,
   Footer
 }

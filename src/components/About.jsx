@@ -41,15 +41,15 @@ const About = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <h2 className={styles.sectionHeadText}>Overview.</h2>
+        <h2 className={styles.sectionHeadText}>About Me.</h2>
       </motion.div>
 
       <motion.p 
       variants={fadeIn("", "", 0.1, 1)}
       className="mt-4 text-secondary  text-[19px] max-w-3xl leading-[30px]">
-        Hi there, I'm Rodrigo, a self-taught front end web developer from Mexico. 
-        I have a passion for all things technology and design, and I love creating beautiful and functional websites. 
-        I'm always eager to learn new skills and tools, and I'm looking for job opportunities where I can contribute, learn and grow as a developer.
+       Hi there, I'm Rodrigo, a self-taught front end web developer from Mexico. 
+       I have a passion for all things technology and design, and I'm always eager to learn new skills and tools.
+       Currently I'm looking for job opportunities where I can contribute, learn and grow as a developer.
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10">
