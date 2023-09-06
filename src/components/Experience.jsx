@@ -13,7 +13,7 @@ const Experience = () => (
      </motion.div>
  
     <motion.div
-      className={`${styles.innerWidth} mx-auto flex lg:flex-row flex-col gap-6`}
+      className={`${styles.innerWidth} mx-auto flex lg:flex-row flex-col gap-6 overflow-hidden`}
       >
       <Tilt className="h-full"
      tiltMaxAngleX={4}
