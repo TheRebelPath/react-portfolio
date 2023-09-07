@@ -2,9 +2,14 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { textVariant, fadeIn } from "../utils/motion";
+import { useMobile } from "../utils/useMobile";
 import Tech from "./Tech";
 
-const Experience = () => (
+const Experience = () => {
+  
+  const isMobile = useMobile();
+ 
+  return (
   <>
     <motion.div variants={textVariant()}
     className="mb-10">
@@ -27,17 +32,22 @@ const Experience = () => (
         </p>
         </div>
       </motion.div>
-
-      <motion.div
-        variants={fadeIn('left', 'tween', 0.2, 1)}
-        className="flex-1 flex justify-center items-center"
-      >
-        <Tech/>
-
-      </motion.div>
+      { isMobile ? ( 
+        false
+      ) : ( 
+          <motion.div
+          variants={fadeIn('left', 'tween', 0.2, 1)}
+          className="flex-1 flex justify-center items-center"
+        >
+          <Tech/>
+  
+        </motion.div> 
+        
+      )}
     </motion.div>
     </>
-);
+ )
+};
 
 
 export default SectionWrapper(Experience, "experience");
