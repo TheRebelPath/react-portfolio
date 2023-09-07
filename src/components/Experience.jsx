@@ -8,7 +8,7 @@ const Experience = () => (
   <>
     <motion.div variants={textVariant()}
     className="mb-10">
-       <h2 className={`${styles.sectionHeadText} cyberpunk`}>Experience.</h2>
+       <h2 className={`${styles.sectionHeadText} cyberpunk`}>Experience</h2>
      </motion.div>
  
     <motion.div

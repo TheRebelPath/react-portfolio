@@ -450,22 +450,22 @@ h3.cyberpunk,
 h4.cyberpunk {
   /* font-size: 2rem; */
   /* line-height: 2.2rem; */
-  font-weight: 200;
+  font-weight: 400;
   position: relative;
   padding-bottom: 15px;
   /* color: aqua; */
 }
 
 h2.cyberpunk {
-  font-size: 1.7rem;
+  /* font-size: 1.7rem; */
   line-height: 1.9rem;
   font-weight: 300;
 }
 
 h3.cyberpunk {
-  font-size: 1.4rem;
+  /* font-size: 1.4rem; */
   line-height: 1.6rem;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 h4.cyberpunk {
@@ -481,12 +481,17 @@ h4.cyberpunk:before {
     content: "";
     display: block;
     position: absolute;
-    bottom: 0px;
+    bottom: -20px;
     left: 2px;
     width: 100%;
     height: 10px;
     background-color: aqua;
     clip-path: polygon(0px 0px, 85px 0px, 90px 5px, 100% 5px, 100% 6px, 85px 6px, 80px 10px, 0px 10px);
+}
+
+h1.cyberpunk:before,
+h4.cyberpunk:before {
+  bottom: -5px;
 }
 
 
@@ -512,6 +517,7 @@ h4.cyberpunk:after,
 p.cyberpunk:after {
   content: "_";
   animation-name: hxafter;
+  color: #f4f511;
   animation-duration: var(--glitched-duration);
   animation-iteration-count: infinite;
   animation-timing-function: linear;

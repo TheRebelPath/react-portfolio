@@ -85,7 +85,7 @@ const Works = () => {
           &nbsp;
       </span>
       <motion.div variants={textVariant()}>
-        <h2 className={`${styles.sectionHeadText} cyberpunk mb-10`}>Projects.</h2>
+        <h2 className={`${styles.sectionHeadText} cyberpunk mb-10`}>Projects</h2>
       </motion.div>
       <div className="w-full flex">
         <motion.p
@@ -110,7 +110,7 @@ const Works = () => {
         <button onClick={loadMore} 
         className="cyberpunk2077 active:translate-y-0.5"
         >
-          Load More
+          Load More_
         </button>
       )}
 

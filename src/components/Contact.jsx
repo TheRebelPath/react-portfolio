@@ -66,7 +66,7 @@ const Contact = () => {
         variants={slideIn("left", "tween", 0.2, 1)}
         className="flex-[0.75] p-8"
       >
-        <h3 className={`${styles.sectionHeadText} cyberpunk`}>Contact.</h3>
+        <h3 className={`${styles.sectionHeadText} cyberpunk`}>Contact</h3>
         <form
           ref={formRef}
           onSubmit={handleSubmit}
@@ -111,7 +111,7 @@ const Contact = () => {
           <button
             type="submit"
             className="active:translate-y-0.5 cyberpunk2077">
-            {loading ? "Sending..." : "Send"}
+            {loading ? "Sending..." : "Send_"}
           </button>
         </form>
       </motion.div>

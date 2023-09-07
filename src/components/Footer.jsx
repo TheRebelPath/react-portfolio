@@ -13,11 +13,11 @@ const Footer = () => (
       <div className="flex flex-col">
       <hr  className="mb-[30px] bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 opacity-40" />
         <div className="flex items-center justify-between flex-wrap gap-4">
-          <h4 className="font-extrabold text-[20px] text-white">Rodrigo | Front End Developer</h4>
+          <h4 className="font-extrabold text-[20px] text-white cyberpunk">Rodrigo | Front End Developer</h4>
           <p className="font-normal text-[14px] text-white opacity-50">
             Copyright © 2023 RYF. All rights reserved.
           </p>
-          <div className="flex gap-4">
+          <div className="flex gap-4 ml-10">
             {socials.map((social) => (
               <a key={social.name}
                  href={social.url}
