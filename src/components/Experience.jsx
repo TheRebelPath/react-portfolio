@@ -40,9 +40,7 @@ const Experience = () => {
           className="flex-1 flex justify-center items-center"
         >
           <Tech/>
-  
-        </motion.div> 
-        
+        </motion.div>   
       )}
     </motion.div>
     </>

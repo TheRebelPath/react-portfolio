@@ -78,7 +78,7 @@ const Works = () => {
         variants={staggerContainer()}
         initial={show}
         whileInView="show"
-        viewport={{ once: true, amount: 0.25 }}
+        viewport={{ once: true, amount: 0.08}}
         className={`${styles.padding} max-w-7xl mx-auto relative z-0`}
       >
       <span className="hash-span" id="works">
