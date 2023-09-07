@@ -14,7 +14,7 @@ const ProjectCard = ({index, name, description, tags, image, source_code_link, l
      <Tilt
         tiltMaxAngleX={4}
         tiltMaxAngleY={4}
-        perspective={1000}
+        perspective={800}
         transitionSpeed={2500}
         tiltEasing="ease-in-out"
         scale={1.04}
@@ -23,7 +23,8 @@ const ProjectCard = ({index, name, description, tags, image, source_code_link, l
         glareColor="blue"
         glarePosition="all"
         glareBorderRadius="20px"
-        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full">
+        className="green-pink-gradient p-[1px] rounded-2xl sm:w-[360px] w-full">
+        <div className="bg-black border-[16px] border-black rounded-[20px]">
        <div className="relative w-full h-[230px]">
          <img 
          loading="lazy"
@@ -56,6 +57,7 @@ const ProjectCard = ({index, name, description, tags, image, source_code_link, l
           </p>
         ))}
        </div>
+       </div>
      </Tilt>
     </motion.div>
   )
@@ -83,12 +85,12 @@ const Works = () => {
           &nbsp;
       </span>
       <motion.div variants={textVariant()}>
-        <h2 className={styles.sectionHeadText}>Projects.</h2>
+        <h2 className={`${styles.sectionHeadText} cyberpunk mb-10`}>Projects.</h2>
       </motion.div>
       <div className="w-full flex">
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
-          className="mt-3 text-secondary text-[19px] max-w-3xl leading-[30px]"
+          className=" text-secondary text-[19px] max-w-3xl leading-[30px]"
         >
           Here are some of the projects I’ve worked on that showcase my skills and experience. 
           For each project, I’ve provided brief descriptions and links to code repositories and live demos. 
@@ -103,9 +105,10 @@ const Works = () => {
           />
         ))}
       </div>
-       <div className="w-full flex justify-center">
+       <div className="w-full p-4 flex justify-center">
       {visibleProjects < projects.length && (
-        <button onClick={loadMore} className="w-[25%] max-[420px]:w-full mt-5 bg-tertiary py-3 px-8 outline-none  text-white font-bold shadow-md shadow-primary rounded-xl hover:bg-primary transform active:translate-y-0.5"
+        <button onClick={loadMore} 
+        className="cyberpunk2077 active:translate-y-0.5"
         >
           Load More
         </button>

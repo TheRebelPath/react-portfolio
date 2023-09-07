@@ -64,16 +64,16 @@ const Contact = () => {
     <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
+        className="flex-[0.75] p-8"
       >
-        <h3 className={styles.sectionHeadText}>Contact.</h3>
+        <h3 className={`${styles.sectionHeadText} cyberpunk`}>Contact.</h3>
         <form
           ref={formRef}
           onSubmit={handleSubmit}
           className="mt-12 flex flex-col gap-8"
         >
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your Name</span>
+            <span className="text-white font-medium mb-4">Name :</span>
             <input
               type="text"
               name="name"
@@ -81,23 +81,23 @@ const Contact = () => {
               onChange={handleChange}
               required
               placeholder="What's your name?"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              className="cyberborder bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none  font-medium"
             />
           </label>
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your Email</span>
+            <span className="text-white font-medium mb-4">Email :</span>
             <input
               type="email"
               name="email"
               value={form.email}
               onChange={handleChange}
               required
-              placeholder="What's your email"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              placeholder="What's your email?"
+              className="cyberborder bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none font-medium"
             />
           </label>
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your Message</span>
+            <span className="text-white font-medium mb-4">Message :</span>
             <textarea
               rows="7"
               name="message"
@@ -105,13 +105,12 @@ const Contact = () => {
               onChange={handleChange}
               required
               placeholder="Write me a message..."
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium resize-none"
+              className="cyberborder bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none font-medium resize-none"
             />
           </label>
           <button
             type="submit"
-            className="bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl hover:bg-primary transform active:translate-y-0.5"
-          >
+            className="active:translate-y-0.5 cyberpunk2077">
             {loading ? "Sending..." : "Send"}
           </button>
         </form>

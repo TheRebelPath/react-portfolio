@@ -11,7 +11,7 @@ const Footer = () => (
     <div className="lg:w-[100%] w-[95%] mx-auto flex flex-col">
 
       <div className="flex flex-col">
-        <div className="mb-[30px] h-[2px] bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 opacity-40" />
+      <hr  className="mb-[30px] bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 opacity-40" />
         <div className="flex items-center justify-between flex-wrap gap-4">
           <h4 className="font-extrabold text-[20px] text-white">Rodrigo | Front End Developer</h4>
           <p className="font-normal text-[14px] text-white opacity-50">
