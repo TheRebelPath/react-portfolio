@@ -1,73 +1,71 @@
-import React, { useEffect, useRef, Suspense } from 'react';
+import { useRef, useEffect } from "react";
 
-function MatrixBackground({ timeout = 50 }) {
-    const canvas = useRef();
-    const yPositions = useRef([]);
+const renderMatrix = (ref) => {
+    let canvas = ref.current;
+    let context = canvas.getContext("2d");
 
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const katakana =
+        "アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン";
+    const latin = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const nums = "0123456789";
+    const alphabet = katakana + latin + nums;
+
+    const fontSize = 16;
+    const columns = canvas.width / fontSize;
+
+    const rainDrops = [];
+
+    for (let x = 0; x < columns; x++) {
+        rainDrops[x] = 1;
+        
+    }
+
+    const render = () => {
+        context.fillStyle = "rgba(0, 0, 0, 0.05)"; // black w a tiny bit of alpha
+        context.fillRect(0, 0, canvas.width, canvas.height);
+
+        context.fillStyle = "#2be4f7"; // font color
+        context.font = fontSize + "px monospace";
+
+        for (let i = 0; i < rainDrops.length; i++) {
+            // randomize the string of characters to render
+            const text = alphabet.charAt(
+                Math.floor(Math.random() * alphabet.length)
+            );
+            context.fillText(text, i * fontSize, rainDrops[i] * fontSize);
+
+            if (
+                rainDrops[i] * fontSize > canvas.height &&
+                Math.random() > 0.975
+            ) {
+                rainDrops[i] = 0;
+            }
+            rainDrops[i]++;
+        }
+    };
+    const intervalId = setInterval(render, 35);
+    return () => {
+        clearInterval(intervalId); // Cleanup: Clear the interval when component unmounts
+    };
+};
+
+const MatrixBackground = () => {
+    const ref = useRef();
+    const thisClassName = "absolute w-full h-full  object-cover -z-10 bg-transparent"
     useEffect(() => {
-        const context = canvas.current.getContext('2d');
+        const cleanup = renderMatrix(ref);
 
-        const resizeCanvas = () => {
-            const width = window.innerWidth;
-            const height = window.innerHeight;
-            canvas.current.width = width;
-            canvas.current.height = height;
-
-            context.fillRect(0, 0, width, height);
-
-            const columns = Math.floor(width / 20) + 1;
-            yPositions.current = Array.from({ length: columns }).fill(0);
-        };
-
-        // Initial setup and canvas resizing on component mount
-        resizeCanvas();
-
-        // Listen for window resize events
-        window.addEventListener('resize', resizeCanvas);
-
-        context.fillRect(0, 0, canvas.current.width, canvas.current.height);
-
-        const matrixEffect = () => {
-            context.fillStyle = '#0001';
-            context.fillRect(0, 0, canvas.current.width, canvas.current.height);
-
-            context.fillStyle = '#2be4f7';
-            context.font = '15pt monospace';
-
-            yPositions.current.forEach((y, index) => {
-                const text = String.fromCharCode(Math.floor(Math.random() * 128));
-                const x = index * 20;
-                context.fillText(text, x, y);
-
-                if (y > 100 + Math.random() * 10000) {
-                    yPositions.current[index] = 0;
-                } else {
-                    yPositions.current[index] = y + 20;
-                }
-            });
-        };
-
-        const interval = setInterval(matrixEffect, timeout);
-
-        // Cleanup and remove event listener on component unmount
         return () => {
-            clearInterval(interval);
-            window.removeEventListener('resize', resizeCanvas);
+            cleanup(); // Cleanup: Call the cleanup function returned by renderMatrix
         };
-    }, [timeout]);
-
+    }, []);
     return (
-        <div
-            className='absolute -z-10'
-        >
-               <Suspense fallback={null}>
-    
-            <canvas
-                ref={canvas}
-            />
-        </Suspense>
-        </div>
+            <canvas  className={thisClassName} ref={ref} />
     );
-}
+};
 
 export default MatrixBackground;
+
