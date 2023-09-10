@@ -3,42 +3,46 @@ import { Link } from "react-router-dom";
 
 import { styles } from "../styles";
 import { navLinks } from "../constants";
-import { logo, menu, close } from "../assets";
+import { logo} from "../assets";
+import { useMobile } from "../utils/useMobile";
+import { motion, AnimatePresence } from "framer-motion";
+import { fadeIn } from "../utils/motion";
+import { MenuButton } from "./canvas";
+import { socials } from "../constants";
 
 const Navbar = () => {
   const [active, setActive] = useState(" ");
   const [toggle, setToggle] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const isMobile = useMobile()
+
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      if (scrollTop > 100) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
+    if(toggle && isMobile) {
+      document.body.style.overflow = 'hidden';
+    } 
+   if(!isMobile) {
+    document.body.style.overflow = 'unset';
+   } 
+   if (!toggle) {
+    document.body.style.overflow = 'unset';
+   }
+ }, [toggle, isMobile]);
 
-    window.addEventListener("scroll", handleScroll);
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-   
   return (
     <nav
     className={`${
       styles.paddingX
-    } w-full flex items-center py-5 fixed top-0 z-20 ${
-      scrolled ? "bg-primary" : "bg-transparent"
-    }`}
+    } w-full flex items-start  py-5 fixed top-0 z-20 border-2 border-white-500 
+     ${toggle && isMobile ? "inset-0  bg-primary" : " "}`}
     >
-      <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
+      <div className="w-full flex justify-between items-center max-w-7xl mx-auto border-2 border-yellow-500 ">
         <Link
           to="/"
           className="flex items-center gap-2"
           onClick={() => {
             setActive("");
+            setToggle(false);
             window.scrollTo(0, 0);
           }}
         >
@@ -62,35 +66,56 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <div className="sm:hidden flex flex-1 justify-end items-center">
-          <img
-            src={toggle ? close : menu}
-            alt="menu"
-            className="w-[28px] h-[28px] object-contain cursor-pointer"
-            onClick={() => setToggle(!toggle)}
-          />
+        <div className="sm:hidden flex flex-1 justify-end items-center border-solid border-2 border-red-500 z-50">
+    
+          <MenuButton
+             toggle={toggle}
+             setToggle={setToggle}
+             />
 
           <div
             className={`${
               !toggle ? "hidden" : "flex"
-            } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
+            } p-6 black-gradient absolute top-20 right-0 left-0 bottom-50 min-w-[140px] z-10  border-solid border-2 border-sky-500 `}
           >
             <ul className="list-none flex justify-end items-start flex-col gap-4">
-              {navLinks.map((link) => (
-                <li
+              <AnimatePresence >
+              {navLinks.map((link, index) => (
+                <motion.li
+                variants={fadeIn('right', 'spring', 0.1 * index, 0.75)}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: false, amount: 0.25 }}
                   key={link.id}
                   className={`${
-                    active === link.title ? "text-[#f4f511]" : "text-secondary"
-                  } font-poppins font-medium cursor-pointer text-[16px]`}
+                    active === link.title ? "text-[#f4f511] cyberpunk" : "text-secondary"
+                  }  font-medium cursor-pointer text-[50px]`}
                   onClick={() => {
-                    setToggle(!toggle);
+                    setToggle(false);
                     setActive(link.title);
                   }}
                 >
                   <a href={`#${link.id}`}>{link.title}</a>
-                </li>
+                </motion.li>
               ))}
+              </AnimatePresence>
             </ul>
+            <div className="absolute flex  top-[400px] left-0 w-full h-[410px] bg-red-400">
+              {/* <p className="cyberpunk">Testing</p> */}
+              {socials.map((social) => (
+              <a key={social.name}
+                 href={social.url}
+                 target='_blank'
+                 rel='noreferrer '>
+                <img
+                  src={social.icon}
+                  alt={social.name}
+                  className="w-[30px] h-[30px] object-contain cursor-pointer transition ease-in-out delay-150 hover:scale-150"
+                />
+              </a>
+
+            ))}
+            </div>
           </div>
         </div>
       </div>
