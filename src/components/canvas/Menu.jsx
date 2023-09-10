@@ -47,7 +47,7 @@ const MenuButton = ({ toggle, setToggle }) => {
 
   return (
     <button onClick={onClick}>
-      <svg width="28" height="28" viewBox="0 0 20 20">
+      <svg width="28" height="28" viewBox="0 0 22 22">
       <motion.path
           d="M0 4.5L24 4.5"
           animate={extraLineControls} // Use the animation control for the extra line

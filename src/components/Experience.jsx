@@ -21,7 +21,7 @@ const Experience = () => {
       >
       <motion.div
         variants={fadeIn('right', 'tween', 0.2, 1)}
-        className="lg:max-w-[370px] green-pink-gradient p-[1px] rounded-[20px] "
+        className="lg:max-w-[330px] green-pink-gradient p-[1px] rounded-[20px] "
       >
         <div 
         className="bg-black rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col"

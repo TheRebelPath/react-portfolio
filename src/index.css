@@ -514,7 +514,8 @@ h1.cyberpunk:after,
 h2.cyberpunk:after,
 h3.cyberpunk:after,
 h4.cyberpunk:after,
-p.cyberpunk:after {
+p.cyberpunk:after,
+li.cyberpunk:after {
   content: "_";
   animation-name: hxafter;
   color: #f4f511;
